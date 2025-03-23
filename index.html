@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+<!-- Bronvermelding: kat afbeeldingen zelf getekend
+     de rest van alle afbeeldingen zijn van canva https://www.canva.com/
+-->
+<div id="startscherm">
+     <button id="startknop">START NOW</button>
+</div>
+
+<div id="kieskatscherm">
+    <h1><strong>CHOOSE YOUR CAT</strong></h1>
+    <div class="cats-container">
+        <img id="kat1" src="images/Kat1.png" alt="oranjekat">
+        <img id="kat2" src="images/Kat2.png" alt="gekleurdekat">
+        <img id="kat3" src="images/Kat3.png" alt="zwartekat">
+    </div>
+    <div class="pijlen-container">
+            <img class="pijl" src="images/pijlback.png"  alt="pijlterug" >
+            <img class="pijl" src="images/pijlnext.png" alt="pijlvolgende">
+    </div>
+</div>
+
+<div id="kiesnaamscherm">
+    <h1>NAME YOUR CAT</h1>
+    <div class="name-input-container">
+        <input type="text" id="katNameInput" placeholder="Enter kat name" maxlength="15">
+        <p>(Max 15 characters)</p>
+    </div>
+    <div class="pijlen-container">
+        <img class="pijl" src="images/pijlback.png" alt="pijlterug">
+        <img class="pijl" src="images/pijlnext.png" alt="pijlvolgende">
+    </div>
+</div>
+
+<div id="kieskledingscherm">
+    <h2>CHOOSE YOUR OUTFIT</h2>
+    <div id="katNameDisplay" class="kat-name-display"></div>
+    <p class="outfit-warning" id="outfitWarning">Dat is wel veel hoor! </p>
+    <div class="selected-cat-container"></div>
+    <div class="kledingItems">
+    <img id="bril" src="images/kleding/bril.png" alt="">
+    <img id="strikhoed" src="images/kleding/hoedstrik.png" alt="">
+    <img id= "cowboyhoed" src="images/kleding/cowboyhoed.png" alt="">
+    <img id= "sjaal" src="images/kleding/sjaal.png" alt="">
+    <img id="strandhoed" src="images/kleding/strandhoed.png" alt="">
+    <img id="zonnebril" src="images/kleding/zonnebril.png" alt="">
+    <img id="cutestrikje" src="images/kleding/strik.png" alt="">
+    <img id="ketting" src="images/kleding/ketting.png" alt="">
+    <img id="rockhaar" src="images/kleding/haar.png" alt="">
+    <img id="halsband" src="images/kleding/halsband.png" alt="">
+    </div>
+    <div class="outfits">
+        <div>
+            <p>Catcasso</p>
+            <img class="outfit" src="images/kleding/catcasso1.png"  alt="Catcasso Hat" data-target="strikhoed">
+            <img class="outfit" src="images/kleding/catcasso2.png"  alt="Catcasso Bowtie" data-target="bril">
+        </div>
+        
+        <div>
+            <p>Cowboy</p>
+            <img class="outfit" src="images/kleding/cowboy1.png" alt="Cowboy Hat" data-target="cowboyhoed">
+            <img class="outfit" src="images/kleding/cowboy2.png" alt="Cowboy Bandana" data-target="sjaal">
+        </div>
+        
+        <div>
+            <p>Beachcat</p>
+            <img class="outfit" src="images/kleding/beach1.png" alt="Beach Hat" data-target="strandhoed">
+            <img class="outfit" src="images/kleding/beach2.png" alt="Beach Glasses" data-target="zonnebril">
+        </div>
+        
+        <div>
+            <p>Cutie</p>
+            <img class="outfit" src="images/kleding/cute1.png" alt="Cute Bow" data-target="cutestrikje">
+            <img class="outfit" src="images/kleding/cute2.png" alt="Cute Necklace" data-target="ketting">
+        </div>
+        
+        <div>
+            <p>Rockstar</p>
+            <img class="outfit" src="images/kleding/rock1.png" alt="Rockstar Hair" data-target="rockhaar">
+            <img class="outfit" src="images/kleding/rock2.png" alt="Rockstar Collar" data-target="halsband">
+        </div>
+    </div>
+    
+        <div class="pijlen-container">
+                <img class="pijl" src="images/pijlback.png" alt="pijl terug">
+                <img class="pijl" src="images/pijlnext.png" alt="pijl volgende">
+        </div>
+</div>
+
+<div id="kiesinstrumentenscherm">
+    <div id="katNameDisplay" class="kat-name-display"></div>
+    <div class="selected-cat-container"></div>
+    <div class="selected-outfit-container"></div>
+    <div class="selected-instrumenten-container"></div>
+    <div class="instrumentItems">
+        <img id="elektrischegitaar" src="images/elektrischegitaar.png" alt="">
+        <img id="akoestischegitaar" src="images/akoestischegitaar.png" alt="">
+        <img id="gitaarroze" src="images/gitaarroze.png" alt="">
+        <img id="microphoneitem" src="images/microphoneitem.png" alt="">
+    </div>
+    <div class="instrumenten-container">
+        <h3>CHOOSE YOUR INSTRUMENT</h3>
+        <img id="microphone" src="images/microphone.png" alt="microphone" data-target="microphoneitem">
+        <img class="gitaar" src="images/guitare1.png" alt="electric guitare" data-target="elektrischegitaar">
+        <img class="gitaar" src="images/guitare2.png" alt="achoustic guitare" data-target="akoestischegitaar">
+        <img class="gitaar" src="images/guitare3.png" alt="pink guitare" data-target="gitaarroze">
+        
+    </div>
+    <div class="pijlen-container">
+            <img class="pijl" src="images/pijlback.png" alt="pijlterug">
+            <img class="pijl" src="images/pijlnext.png" alt="pijlvolgende">
+    </div>
+</div>
+
+<div id="eindscherm">
+    <div id="katNameDisplay" class="kat-name-display"></div>
+    <div id="katMessage" class="kat-message"></div>
+    <div class="selected-cat-container"></div>
+    <div class="selected-outfit-container"></div>
+    <div class="selected-instrumenten-container"></div>
+
+    <div class="muziekknoppen">
+        <button class="muziekknop" id="muziekSabrina">Espresso</button>
+        <button class="muziekknop" id="muziekBillie">What Was I Made For?</button>
+        <button class="muziekknop" id="muziekTaylor">Shake It Off</button>
+        <button class="muziekknop" id="achtergrondKnop">Verassing</button>
+        <p>Wait for the music to start when clicked. </p>
+    </div>
+    
+    <div class="pijlen-containereindscherm">
+        <img class="pijl" src="images/pijlback.png" alt="pijlterug">
+        <img id="opnieuwknop" src="images/opnieuwknop.png" alt="opnieuw">
+    </div>
+</div>
+</body>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         	    ````````````````````
+</html>

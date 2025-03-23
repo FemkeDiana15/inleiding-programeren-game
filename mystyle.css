@@ -1,0 +1,579 @@
+/*body/ alle pagina*/
+*{
+  margin: 0;
+}
+body{
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*Pijlen*/
+
+.pijl{
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 50px;
+}
+
+.pijlen-container{
+  display: flex;
+  position: relative;
+  left: 550px;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  box-sizing: border-box;
+}
+
+/*startscherm*/
+#startknop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 500px;
+  background-color: #a43986;
+  border-radius: 40px;
+  border: solid deeppink;
+  color: white;
+  padding: 50px 80px;
+  font-size: 4em;
+}
+
+a{
+  text-decoration: none;
+}
+
+#startknop:hover{
+  background-color: deeppink;
+  border: solid #a43986;
+}
+
+h1{
+  position: absolute;
+  top: 20px;
+  left: 350px;
+  display: center;
+  color: deeppink;
+  font-size: 5em;
+}
+
+#startscherm {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/startmeowpop.png');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+/*Kieskatscherm*/
+
+#kieskatscherm{
+  display: none;
+  background-image: url('images/achtergrondgame.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+.cats-container{
+  gap: 30px;
+  position: relative;
+  top: 170px;
+  left: 150px;
+}
+
+#kat1{
+  width: 25vw;
+  height: 30vw;
+  border: solid gold 15px;
+}
+
+#kat3{
+  width: 25vw;
+  height: 30vw;
+  border: solid gold 15px;
+}
+
+#kat2{
+  width: 25vw;
+  height: 30vw;
+  border: solid gold 15px;
+}
+
+.selected-cat-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 300px;
+  text-align: center;
+}
+
+.selected-cat-container img {
+ position: fixed;
+ right: 260px;
+ top: 100px;
+ width: 30vw;
+ height: 35vw;
+}
+
+.selected-cat-container .kat-name-display {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2.5em;
+  text-shadow: 2px 2px deeppink;
+  white-space: nowrap;
+}
+
+/*Kiesnaamscherm*/
+
+#kiesnaamscherm {
+  display: none;
+  background-image: url('images/achtergrondgame.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+#kiesnaamscherm h1 {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: deeppink;
+  font-size: 4em;
+  text-align: center;
+}
+
+.name-input-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#katNameInput {
+  font-size: 3em;
+  padding: 20px;
+  border: 5px solid deeppink;
+  border-radius: 30px;
+  width: 600px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#katNameInput:focus {
+  outline: none;
+  box-shadow: 0 0 20px deeppink;
+}
+
+#kiesnaamscherm p {
+  color: white;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.kat-name-display {
+  position: absolute;
+  top: 60px;
+  left: 365px;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 4em;
+  text-shadow: 3px 3px deeppink;
+  text-align: center;
+  width: 100%;
+}
+
+.outfit-warning {
+  position: fixed;
+  top: 50px;
+  left: 400px;
+  transform: translateX(-50%);
+  background: white;
+  color: #a43986;
+  font-size: 2em;
+  padding: 25px 40px;
+  border-radius: 30px;
+  border: 4px solid deeppink;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 3;
+  min-width: 200px;
+  text-align: center;
+  font-weight: bold;
+  animation: float 3s ease-in-out infinite;
+}
+
+.outfit-warning::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: white transparent transparent;
+  filter: drop-shadow(0 4px 3px rgba(0,0,0,0.1));
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, 0px); }
+  50% { transform: translate(-50%, -10px); }
+  100% { transform: translate(-50%, 0px); }
+}
+
+/*Kieskledingscherm*/
+
+#kieskledingscherm{
+  display: none;
+  background-image: url('images/achtergrondgame.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+h2 {
+  position: absolute;
+  top: 30px;
+  left: 600px;
+  color: deeppink;
+  font-size: 4em;
+  margin: 0;
+  width: 100px;
+}
+
+.outfits {
+  position: fixed;
+  right: 100px; 
+  top: 350px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  gap: 30px;
+  max-height: 90vh;
+}
+
+.outfit {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 120px;
+  height: 115px;
+}
+
+.outfits div {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.outfits p {
+  color: deeppink;
+  font-size: 2em;
+}
+
+#bril {
+  position: absolute;
+  top: 220px;
+  left: 205px;
+  z-index: 2; 
+  display: none;
+}
+
+#strikhoed {
+  position: absolute;
+  top: 100px;
+  left: 210px;
+  z-index: 2; 
+  display: none;
+}
+
+#cowboyhoed{
+  position: absolute;
+  top: 100px;
+  left: 210px;
+  z-index: 2; 
+  display: none;
+}
+
+#sjaal{
+  position: absolute;
+  top: 330px;
+  left: 260px;
+  width: 260px;
+  z-index: 2; 
+  display: none;
+}
+
+#strandhoed{
+  position: absolute;
+  top: 100px;
+  left: 240px;
+  z-index: 2; 
+  display: none;
+}
+
+#zonnebril{
+  position: absolute;
+  top: 230px;
+  width: 250px;
+  left: 240px;
+  z-index: 2; 
+  display: none;
+}
+
+#cutestrikje{
+  position: absolute;
+  top: 160px;
+  left: 380px;
+  z-index: 2; 
+  display: none;
+} 
+
+#ketting{
+  position: absolute;
+  top: 360px;
+  left: 280px;
+  width: 200px;
+  z-index: 2;
+  display: none;
+}
+
+#rockhaar{
+  position: absolute;
+  top: 100px;
+  left: 250px;
+  z-index: 2; 
+  display: none;
+}
+
+#halsband{
+  position: absolute;
+  top: 363px;
+  left: 280px;
+  width: 230px;
+  z-index: 2;
+  display: none;
+}
+
+/*Kiesinstrumentenscherm*/
+
+#kiesinstrumentenscherm{
+  display: none;
+ background-image: url('images/achtergrondgame.png');
+ background-repeat: no-repeat;
+ background-size: cover;
+ min-height: 100vh;
+ position: relative;
+}
+
+h3 {
+  position: absolute;
+  top: 30px;
+  left: 650px;
+  color: deeppink;
+  font-size: 4em;
+  margin: 0;
+  width: 100px;
+} 
+
+.gitaar {
+  width: 150px;
+  height: 300px;
+  top: 230px;
+  left: 120px;
+  gap: 10px;
+  margin: 40px;
+  position: relative; 
+}
+
+#microphone {
+  width: 150px;
+  height: 150px;
+  position: relative; 
+  top: 270px;
+  left: 980px;
+}
+
+.instrumenten-container {
+  display: flex;
+  justify-content: center;
+}
+
+#elektrischegitaar{
+  position: absolute;
+  top: 300px;
+  left: 250px;
+  z-index: 2;
+  display: none;
+}
+
+#akoestischegitaar{
+  position: absolute;
+  top: 330px;
+  left: 220px;
+  z-index: 2;
+  display: none;
+}
+
+#gitaarroze{
+  position: absolute;
+  top: 330px;
+  left: 220px;
+  z-index: 2;
+  display: none;
+}
+
+#microphoneitem{
+  position: absolute;
+  top: 320px;
+  left: 330px;
+  z-index: 2;
+  display: none;
+}
+
+/*eindscherm */
+
+#eindscherm{
+  display: none;
+  background-image: url('images/achtergrondeind.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+.pijlen-containereindscherm{
+  display: flex;
+  position: relative;
+  align-items: center;
+  position: fixed;
+  bottom: 650px;
+  box-sizing: border-box;
+}
+
+#opnieuwknop{
+  width: 200px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 50px;
+}
+
+#eindscherm .selected-cat-container,
+#eindscherm .selected-outfit-container,
+#eindscherm .selected-instrumenten-container {
+  padding-left: 700px;
+}
+
+#eindscherm .selected-cat-container img {
+  padding-left: 700px;
+  padding-top: 50px;
+}
+
+#eindscherm .selected-outfit-container img {
+  padding-left: 350px;
+  padding-top: 50px;
+}
+
+#eindscherm .selected-instrumenten-container img {
+  padding-left: 350px;
+  padding-top: 50px;
+}
+
+#eindscherm .kat-name-display  {
+  position: absolute;
+  top: 100px;
+  left: 710px;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 4em;
+  text-shadow: 3px 3px deeppink;
+  text-align: center;
+  width: 100%;
+}
+
+.muziekknoppen {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end; 
+  gap: 10px; 
+  position: fixed; 
+  top: 20px;
+  right: 20px;
+  width: 200px;
+}
+
+.muziekknop {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #790781;
+  padding: 1.1rem 3.4rem;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.muziekknop:hover {
+  background: #e73232;
+}
+
+p{
+  color: #fff;
+}
+
+.kat-message {
+  position: absolute;
+  top: 50px;
+  left: 900px;
+  transform: translateX(-50%);
+  background: #ff69b4;
+  color: white;
+  font-size: 2em;
+  padding: 20px 30px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 400px;
+  filter: drop-shadow(0 4px 3px rgba(0,0,0,0.2));
+  font-style: italic;
+  z-index: 4;
+  animation: float 3s ease-in-out infinite;
+}
+
+.kat-message::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -15px;
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: #ff69b4 transparent transparent;
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+  100% { transform: translate(-50%, 0); }
+}
